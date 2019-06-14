@@ -34,8 +34,6 @@ public class DetServicio {
 	@ManyToOne
 	@JoinColumn(name = "revision_id")
 	private Revision revision;
-	@Column(name = "cant_serv",nullable=false)
-	private int cant_serv;
 	@Temporal(TemporalType.DATE)
 	@Column(name = "Fech_serv",nullable=false)
 	private Date Fech_serv;

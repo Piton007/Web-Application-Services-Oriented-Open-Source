@@ -8,6 +8,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Size;
@@ -29,6 +31,9 @@ public class Servicio {
 	private String descripcion;
 	@Column(name = "Costo_Serv",nullable=false)
 	private double cost_serv;
+	@ManyToOne
+	@JoinColumn(name="Cita_Id")
+	private Cita Cita_Id;
 	@OneToMany(mappedBy = "servicio",fetch = FetchType.LAZY,orphanRemoval = true)
 	private List<DetServicio>detalles;
 }

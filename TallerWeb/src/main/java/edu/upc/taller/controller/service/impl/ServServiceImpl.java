@@ -6,12 +6,12 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import edu.upc.taller.controller.service.IServServicie;
+import edu.upc.taller.controller.service.IServService;
 import edu.upc.taller.model.Servicio;
 import edu.upc.taller.model.repository.IServicioRepository;
 
 @Service
-public class ServServiceImpl implements IServServicie {
+public class ServServiceImpl implements IServService {
 
 	@Autowired
 	private IServicioRepository servicio_repository;
