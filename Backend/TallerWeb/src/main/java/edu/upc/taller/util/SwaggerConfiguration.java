@@ -1,4 +1,4 @@
-package edu.upc.taller;
+package edu.upc.taller.util;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.bind.annotation.RestController;
