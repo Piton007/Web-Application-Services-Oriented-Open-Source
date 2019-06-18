@@ -10,8 +10,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.persistence.Temporal;
-import javax.persistence.TemporalType;
 
 import lombok.Data;
 
@@ -31,11 +29,8 @@ public class DetServicio {
 	@ManyToOne
 	@JoinColumn(name = "tecnico_id")
 	private Tecnico tecnico;
-	@ManyToOne
-	@JoinColumn(name = "revision_id")
-	private Revision revision;
-	@Temporal(TemporalType.DATE)
-	@Column(name = "Fech_serv",nullable=false)
+	@Column(name = "Costo_Detalle",nullable=false)
+	private double cost_detalle;
 	private Date Fech_serv;
 	@Column(name="cant_rep",nullable=false)
 	private int cant_rep;
