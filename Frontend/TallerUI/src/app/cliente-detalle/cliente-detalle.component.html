@@ -1,0 +1,13 @@
+<table class="table">
+  <tbody *ngIf="cliente">
+    <tr>
+      <th>{{cliente.id}}</th>
+      <td>{{cliente.nombre}}</td>
+      <td>{{cliente.apellido}}</td>
+      <td>{{cliente.dni}}</td>
+      <td>{{cliente.telefono}}</td> 
+      <td><button class="btn btn-danger" type="submit"
+        (click)='deleteCliente()'>Eliminar</button></td>
+    </tr>
+  </tbody>
+</table>
