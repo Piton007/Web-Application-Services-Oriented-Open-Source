@@ -1,0 +1,62 @@
+
+<h2 >  Crear Vehiculo</h2>
+
+<div>
+  <form (ngSubmit)="registrarVehiculo()">
+    <div class="row-fluid">
+      <div class="form-group col-md-6">
+          <label for="ano" >Año</label>
+          <input type="number"  class="form-control" id="ano" name="ano"placeholder="Ingrese Año" 
+          required [(ngModel)]="vehiculo.ano" >
+        
+      </div>
+    </div>
+    <div class="row-fluid">
+      <div class="form-group col-md-6">
+        <label for="color">Color</label>
+        <input type="text" class="form-control" id="color" name="color" placeholder="Ingrese Color"
+        required [(ngModel)]="vehiculo.color"
+        >
+    </div>
+    </div>
+    <div class="row-fluid">
+        <div class="form-group col-md-6">
+            <label for="modelo">Modelo</label>
+            <select  name="modelo" class="form-control" id="modelo" [(ngModel)]="modeloselected"  >
+              <option *ngFor="let model of modelos" [ngValue]="model">
+                {{model.nombre_modelo}}</option>
+            </select>  
+          </div>
+      
+    </div>
+    <div class="row-fluid">
+      <div class="form-group col-md-6" >
+          <label for="placa">Placa</label>
+          <input type="text" class="form-control" id="placa" name="placa" placeholder="Ingrese Placa"
+          required [(ngModel)]="vehiculo.numero_placa">
+      </div>
+      
+    </div>
+    <div class="form-group row-fluid">
+      <div class="form-group col-md-6" >
+        <label for="motor">N° Serie Motor</label>
+        <input type="text" class="form-control" id="motor" name="motor" placeholder="Ingrese Serie Motor"
+        
+        required [(ngModel)]="vehiculo.numero_serie_motor">
+      </div>
+    </div>
+    <div class="row-fluid">
+        <div class="form-group col-md-6" >
+          <label for="tipovehiculo">Tipo Vehiculo</label>
+          <input type="text" class="form-control" id="tipovehiculo" name="tipovehiculo" placeholder="Ingrese Tipo Vehiculo" 
+          required [(ngModel)]="vehiculo.tipo_vehiculo">
+        </div>
+    </div>
+    <div class="row-fluid">
+        <div class="form-group col-md-6" >
+        <button  type="submit" class="btn btn-success form-control">Guardar</button>
+        </div>
+    </div>
+  </form>
+
+</div>

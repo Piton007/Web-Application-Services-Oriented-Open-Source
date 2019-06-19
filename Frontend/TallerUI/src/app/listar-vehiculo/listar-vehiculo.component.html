@@ -1,0 +1,39 @@
+<form class="form-inline">
+    <div class="form-group">
+        <div class="row">
+            <div class="col-md-3 text-center">
+                <label for="placa"  >Placa</label>
+              </div>
+              <div class="col-md-2">
+                <input type="text"  class="form-control" id="placa" placeholder="Ingrese Placa">
+              </div>
+              <div class="offset-md-3 col-md-3">
+                  <button type="submit" class="btn btn-primary">Buscar</button>
+              </div>
+        </div>
+          
+        
+    </div>
+
+</form>
+
+<table class="table">
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Placa</th>
+        <th scope="col">Año</th>
+        <th scope="col">Serie Motor</th>
+        <th scope="col">Tipo Vehiculo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let vehiculo of vehiculos">
+        <th scope="row">{{vehiculo.id}}</th>
+        <td>{{vehiculo.numero_placa}}</td>
+        <td>{{vehiculo.ano}}</td>
+        <td>{{vehiculo.numero_serie_motor}}</td>
+        <td>{{vehiculo.tipo_vehiculo}}</td>
+      </tr>
+    </tbody>
+  </table>

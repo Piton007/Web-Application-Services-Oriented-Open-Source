@@ -8,13 +8,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { ClienteDetalleComponent } from './cliente-detalle/cliente-detalle.component';
+import { CrearVehiculoComponent } from './crear-vehiculo/crear-vehiculo.component';
+import { ListarVehiculoComponent } from './listar-vehiculo/listar-vehiculo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CrearClienteComponent,
     ClientesListaComponent,
-    ClienteDetalleComponent
+    ClienteDetalleComponent,
+    CrearVehiculoComponent,
+    ListarVehiculoComponent
   ],
   imports: [
     BrowserModule,
