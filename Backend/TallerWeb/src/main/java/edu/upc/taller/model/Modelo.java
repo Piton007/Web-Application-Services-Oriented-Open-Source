@@ -24,7 +24,7 @@ public class Modelo {
 	
 	@ManyToOne
 	@JoinColumn(name="cod_marca", nullable=false)
-	private Cliente cod_marca;
+	private Marca cod_marca;
 	
 	
 

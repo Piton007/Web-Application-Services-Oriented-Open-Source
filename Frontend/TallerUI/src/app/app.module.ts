@@ -10,6 +10,9 @@ import { FormsModule } from '@angular/forms';
 import { ClienteDetalleComponent } from './cliente-detalle/cliente-detalle.component';
 import { CrearVehiculoComponent } from './crear-vehiculo/crear-vehiculo.component';
 import { ListarVehiculoComponent } from './listar-vehiculo/listar-vehiculo.component';
+import { ServicioListarComponent } from './servicio-listar/servicio-listar.component';
+import { ServicioBuscarComponent } from './servicio-buscar/servicio-buscar.component';
+import { ServicioCrearComponent } from './servicio-crear/servicio-crear.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { ListarVehiculoComponent } from './listar-vehiculo/listar-vehiculo.compo
     ClientesListaComponent,
     ClienteDetalleComponent,
     CrearVehiculoComponent,
-    ListarVehiculoComponent
+    ListarVehiculoComponent,
+    ServicioListarComponent,
+    ServicioBuscarComponent,
+    ServicioCrearComponent
   ],
   imports: [
     BrowserModule,
