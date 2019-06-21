@@ -6,14 +6,24 @@
   <thead class="thead-dark">
     <tr>
       <th scope="col">Id</th>
-      <th scope="col">Asistente</th>
       <th scope="col">Placa vehiculo</th>
+      <th scope="col">Asistente</th>
       <th scope="col">descripcion</th>
       <th scope="col">estado cita</th>
       <th scope="col">Fecha de la cita</th>
+      <th scope="col">Acción</th>
     </tr>
   </thead>
+  <tbody>
+    <tr *ngFor="let cita of citas">
+      <td scope ="row">{{cita.id}}</td>
+      <td>{{cita.cod_vehiculo}}</td>
+      <td>{{cita.cod_asistente}}</td>
+      <td>{{cita.descripcion}}</td>
+      <td>{{cita.estado_cita}}</td>
+      <td>{{cita.fecha_reserva}}</td>
+      <td><button class="btn btn-danger" type="submit"
+        (click)='deleteServicio()'>Eliminar</button></td>
+    </tr>
+  </tbody>
 </table>
-<div *ngFor="let cita of citas">
-  <app-cita-detalle [cita]='cita'></app-cita-detalle>
-</div>

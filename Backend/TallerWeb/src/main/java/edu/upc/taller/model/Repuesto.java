@@ -25,4 +25,5 @@ public class Repuesto {
 	
 	@Column(name="precio", nullable = false)
 	private double precio;
+
 }

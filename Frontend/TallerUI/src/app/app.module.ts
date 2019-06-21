@@ -16,6 +16,8 @@ import { ServicioCrearComponent } from './servicio-crear/servicio-crear.componen
 import { CrearCitaComponent } from './crear-cita/crear-cita.component';
 import { CitaListaComponent } from './cita-lista/cita-lista.component';
 import { CitaDetalleComponent } from './cita-detalle/cita-detalle.component';
+import { ListarRepuestoComponent } from './listar-repuesto/listar-repuesto.component';
+import { RegistrarRepuestoComponent } from './registrar-repuesto/registrar-repuesto.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,9 @@ import { CitaDetalleComponent } from './cita-detalle/cita-detalle.component';
     ServicioCrearComponent,
     CrearCitaComponent,
     CitaListaComponent,
-    CitaDetalleComponent
+    CitaDetalleComponent,
+    ListarRepuestoComponent,
+    RegistrarRepuestoComponent
   ],
   imports: [
     BrowserModule,
