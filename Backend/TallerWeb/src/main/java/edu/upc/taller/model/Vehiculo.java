@@ -23,8 +23,8 @@ public class Vehiculo {
 	@Column(name="numero_placa", nullable = false, length = 9)
 	private String numero_placa;
 	
-	@Column(name="año", nullable = false, length =4)
-	private int año;
+	@Column(name="ano", nullable = false, length =4)
+	private int ano;
 	
 	@ManyToOne
 	@JoinColumn(name="cod_modelo", nullable=false)

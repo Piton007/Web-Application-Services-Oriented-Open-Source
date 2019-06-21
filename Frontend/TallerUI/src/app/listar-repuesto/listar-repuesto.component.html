@@ -1,0 +1,36 @@
+
+
+
+<div  style="margin-top:10px;">
+  <div class="input-group mb-3 mt-4 col-md-4">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">Repuesto</span>
+    </div>
+    <input type="text" class="form-control" placeholder="Ingrese Nombre" aria-label="Repuesto" aria-describedby="basic-addon1"
+    (keyup)=Buscar() [(ngModel)]="repselect">
+  </div>
+<div class="table-responsive-md mx-3">
+  <table class="table" >
+    <thead class="thead-dark">
+      <tr> 
+        <th scope="col">Id</th>
+        <th scope="col">Repuesto</th>
+        <th scope="col">Proveedor</th>
+        <th scope="col">Almacen</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Cantidad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let repuesto of repuestos">
+        <th scope="row">{{repuesto.cod_repuesto_prov_alm}}</th>
+        <td>{{repuesto.repuesto.nombre}}</td>
+        <td>{{repuesto.provedor.nombre}}</td>
+        <td>{{repuesto.almacen.nombre_almacen}}</td>
+        <td>{{repuesto.fecha_ingreso}}</td>
+        <td>{{repuesto.cantidad}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</div>

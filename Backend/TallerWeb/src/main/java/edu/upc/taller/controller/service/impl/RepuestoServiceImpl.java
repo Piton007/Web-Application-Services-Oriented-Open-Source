@@ -18,7 +18,11 @@ public class RepuestoServiceImpl implements IRepuestoService{
 	
 	@Override
 	public Repuesto registrar(Repuesto t) {
+		if(t.getPrecio()>0)
 		return repuestoRepository.save(t);
+		else {
+			return new Repuesto();
+		}
 	}
 
 	@Override
