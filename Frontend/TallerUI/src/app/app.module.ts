@@ -13,6 +13,9 @@ import { ListarVehiculoComponent } from './listar-vehiculo/listar-vehiculo.compo
 import { ServicioListarComponent } from './servicio-listar/servicio-listar.component';
 import { ServicioBuscarComponent } from './servicio-buscar/servicio-buscar.component';
 import { ServicioCrearComponent } from './servicio-crear/servicio-crear.component';
+import { CrearCitaComponent } from './crear-cita/crear-cita.component';
+import { CitaListaComponent } from './cita-lista/cita-lista.component';
+import { CitaDetalleComponent } from './cita-detalle/cita-detalle.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +27,10 @@ import { ServicioCrearComponent } from './servicio-crear/servicio-crear.componen
     ListarVehiculoComponent,
     ServicioListarComponent,
     ServicioBuscarComponent,
-    ServicioCrearComponent
+    ServicioCrearComponent,
+    CrearCitaComponent,
+    CitaListaComponent,
+    CitaDetalleComponent
   ],
   imports: [
     BrowserModule,

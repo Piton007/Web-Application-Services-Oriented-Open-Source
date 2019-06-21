@@ -7,6 +7,8 @@ import {ListarVehiculoComponent} from './listar-vehiculo/listar-vehiculo.compone
 import {ServicioListarComponent} from './servicio-listar/servicio-listar.component'
 import {ServicioCrearComponent} from './servicio-crear/servicio-crear.component'
 import {ServicioBuscarComponent} from './servicio-buscar/servicio-buscar.component'
+import {CrearCitaComponent} from './crear-cita/crear-cita.component'
+import {CitaListaComponent} from './cita-lista/cita-lista.component'
 
 const routes: Routes = [
     {path:'', redirectTo:'cliente', pathMatch:'full'},
@@ -16,7 +18,9 @@ const routes: Routes = [
     {path:'vehiculo/listar',component:ListarVehiculoComponent},
     {path:'servicio/listar',component:ServicioListarComponent},
     {path:'servicio/nuevo',component:ServicioCrearComponent},
-    {path:'servicio/buscar',component:ServicioBuscarComponent}
+    {path:'servicio/buscar',component:ServicioBuscarComponent},
+    {path:'cita/nuevo',component:CrearCitaComponent},
+    {path:'cita/listar',component:CitaListaComponent}
 	
 ];
 
