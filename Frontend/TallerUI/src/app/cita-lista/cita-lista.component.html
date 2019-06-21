@@ -1,0 +1,19 @@
+<br/>
+<h2>Listado de Citas</h2>
+<br/>
+<br/>
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Asistente</th>
+      <th scope="col">Placa vehiculo</th>
+      <th scope="col">descripcion</th>
+      <th scope="col">estado cita</th>
+      <th scope="col">Fecha de la cita</th>
+    </tr>
+  </thead>
+</table>
+<div *ngFor="let cita of citas">
+  <app-cita-detalle [cita]='cita'></app-cita-detalle>
+</div>

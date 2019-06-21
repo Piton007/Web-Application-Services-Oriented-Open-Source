@@ -27,11 +27,11 @@ public class Cita {
 	
 	@ManyToOne
 	@JoinColumn(name="cod_vehiculo", nullable=false)
-	private Cliente cod_vehiculo;
+	private Vehiculo cod_vehiculo;
 	
 	@ManyToOne
 	@JoinColumn(name="cod_asistente", nullable=false)
-	private Cliente cod_asistente;
+	private Asistente cod_asistente;
 	
 	@Column(name="descripcion", nullable = false, length = 50)
 	private String descripcion;
