@@ -1,30 +1,19 @@
 <br/>
-<h2>Listado de Clientes</h2>
+<h2>Listado de Citas</h2>
 <br/>
-<div>
-  <form (ngSubmit)="SearchData()">
-    <div class="form-group col-md-6">
-      <label for ="apellido">Apellidos</label>
-      <input type="text" class="form-control" id="apellido" name="apellido" required [(ngModel)]="apellido" placeholder="Ingrese el apellido">
-    </div>
-    <div class="btn-group">
-      <button type="submit" class="btn btn-success">Buscar</button>
-    </div>
-  </form>
-</div>
 <br/>
 <table class="table">
   <thead class="thead-dark">
     <tr>
       <th scope="col">Id</th>
-      <th scope="col">Nombres</th>
-      <th scope="col">Apellidos</th>
-      <th scope="col">DNI</th>
-      <th scope="col">Teléfono</th>
-      <th scope="col">Acción</th>
+      <th scope="col">Asistente</th>
+      <th scope="col">Placa vehiculo</th>
+      <th scope="col">descripcion</th>
+      <th scope="col">estado cita</th>
+      <th scope="col">Fecha de la cita</th>
     </tr>
   </thead>
 </table>
-<div *ngFor="let cliente of clientes">
-  <app-cliente-detalle [cliente]='cliente'></app-cliente-detalle>
+<div *ngFor="let cita of citas">
+  <app-cita-detalle [cita]='cita'></app-cita-detalle>
 </div>

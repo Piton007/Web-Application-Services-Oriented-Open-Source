@@ -15,22 +15,33 @@ export class CrearCitaComponent implements OnInit {
 
   
   cita: Cita = new Cita();
+
   vehiculos:Vehiculo[];
-  vehiculoselected:Vehiculo= new Vehiculo();
   asistentes:Asistente[];
+  vehiculoselected:Vehiculo= new Vehiculo();
   asistenteselected:Asistente= new Asistente();
 
   constructor(private vehiculoservice:VehiculoService,
-    private asistenteservice:AsistenteService,private CitaService:CitaService) { }
+    private asistenteservice:AsistenteService,private citaService:CitaService) { }
   ngOnInit() {
+    this.loaddata();
   }
-  registrarCliente(){
 
+ 
+  registrarCliente(){
+    let hoy= new Date(Date.now());
     this.cita.cod_vehiculo.numero_placa=this.vehiculoselected.numero_placa;
     this.cita.cod_asistente.nombre_asistente=this.asistenteselected.nombre_asistente;
-    this.CitaService.createCita(this.cita)
-    .subscribe(datos=>console.log(datos), error=>console.log(error));
+    this.cita.fecha_reserva=hoy;
+    this.citaService.createCita(this.cita).subscribe(datos=>console.log(datos), error=>console.log(error));
     this.cita= new Cita();
-  }
+    }
+    loaddata(){
+  
+      this.vehiculoservice.getvehiculos().subscribe(vehs=>this.vehiculos=vehs);
+      this.asistenteservice.getasistente().subscribe(asis=>this.asistentes=asis);
+      
+  
+    }
 
 }
