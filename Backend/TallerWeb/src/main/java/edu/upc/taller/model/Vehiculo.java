@@ -28,7 +28,7 @@ public class Vehiculo {
 	
 	@ManyToOne
 	@JoinColumn(name="cod_modelo", nullable=false)
-	private Cliente cod_modelo;
+	private Modelo cod_modelo;
 	
 	@Column(name="color", nullable = false, length = 15)
 	private String color;

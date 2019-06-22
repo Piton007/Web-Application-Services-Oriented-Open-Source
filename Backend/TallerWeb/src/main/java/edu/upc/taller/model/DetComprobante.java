@@ -19,7 +19,7 @@ public class DetComprobante {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer cod_det_comprobante;
 	@OneToOne
-	@JoinColumn(name="detservicio_id")
+	@JoinColumn(name="detservicio_id",nullable=false)
 	private DetServicio detservicio;
 	@Column(name = "cant_serv")
 	private int cant_serv;

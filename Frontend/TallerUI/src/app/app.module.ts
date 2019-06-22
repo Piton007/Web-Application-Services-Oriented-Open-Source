@@ -41,7 +41,7 @@ import { DetaServCrearComponent } from './deta-serv-crear/deta-serv-crear.compon
     CitaDetalleComponent,
     ActualizarRepuestoComponent,
     DetaServListarComponent,
-    DetaServCrearComponent
+    DetaServCrearComponent,
 
   ],
   imports: [

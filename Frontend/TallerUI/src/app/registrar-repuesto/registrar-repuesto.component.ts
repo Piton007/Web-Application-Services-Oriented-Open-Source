@@ -7,7 +7,7 @@ import { Repuestos } from '../model/repuestos';
 import { Almacen } from '../model/almacen';
 import { Repprovalm } from '../model/repprovalm';
 import { RepuestoProvAlmService } from '../repuesto-prov-alm.service';
-
+import {ListarRepuestoComponent} from '../listar-repuesto/listar-repuesto.component'
 @Component({
   selector: 'app-registrar-repuesto',
   templateUrl: './registrar-repuesto.component.html',
@@ -15,7 +15,7 @@ import { RepuestoProvAlmService } from '../repuesto-prov-alm.service';
 })
 export class RegistrarRepuestoComponent implements OnInit {
 
-  showmodal:boolean=true;
+ 
 
   registro: Repprovalm=new Repprovalm();
   proveedores:Proveedor[];
@@ -25,7 +25,8 @@ export class RegistrarRepuestoComponent implements OnInit {
   provselected:Proveedor=new Proveedor();
   almacenselected:Almacen=new Almacen();
   constructor(private repuestoservice:RepuestosService, private almacenService:AlmacenService,
-              private proveedorService:ProveedorService ,private RepProvAlm: RepuestoProvAlmService         
+              private proveedorService:ProveedorService ,private RepProvAlm: RepuestoProvAlmService,
+              private  listreps:ListarRepuestoComponent     
     ) { }
 
   ngOnInit() {
@@ -48,7 +49,13 @@ export class RegistrarRepuestoComponent implements OnInit {
     this.RepProvAlm.post(this.registro).subscribe(datos=>console.log(datos), error=>console.log(error));
     this.registro=new Repprovalm();
     this.loaddata();
-    this.showmodal=false;
+    
+  }
+  control(){
+    let myDialog:any=<any>document.getElementById("dialogo");
+    this.listreps.loaddata();
+    this.listreps.dialog=false;
+    myDialog.close();
   }
   
 

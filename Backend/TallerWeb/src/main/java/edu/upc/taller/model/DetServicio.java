@@ -23,13 +23,13 @@ public class DetServicio {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer cod_det_serv;
 	@ManyToOne
-	@JoinColumn(name = "servicio_id")
+	@JoinColumn(name = "servicio_id",nullable=false)
 	private Servicio servicio;
 	@ManyToOne
-	@JoinColumn(name = "repuesto_id")
+	@JoinColumn(name = "repuesto_id",nullable=false)
 	private Repuesto repuesto;
 	@ManyToOne
-	@JoinColumn(name = "tecnico_id")
+	@JoinColumn(name = "tecnico_id",nullable=false)
 	private Tecnico tecnico;
 	@Column(name = "Costo_Detalle",nullable=false)
 	private double cost_detalle;

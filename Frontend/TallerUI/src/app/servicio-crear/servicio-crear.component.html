@@ -1,4 +1,4 @@
-<br/>
+﻿<br/>
 <h2 class="row justify-content-center">Registro de Servicio</h2>
 <br/>
 <div class="col-lg-12" style="margin-top:2px;">
@@ -17,7 +17,7 @@
      </div>
      <div class="form-group col-md-5">
       <label for="Cita_Id">Cita :</label>
-      <select class="custom-select" id="Cita_Id" name="Cita_Id" [(ngModel)]="servicio.Cita_Id" >
+      <select class="custom-select" id="Cita_Id" name="Cita_Id" [(ngModel)]="citasSelect" >
           <option *ngFor="let cita of citas" [ngValue]="cita">
               {{cita.id}}</option>
       </select>

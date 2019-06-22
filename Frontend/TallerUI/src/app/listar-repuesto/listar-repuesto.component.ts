@@ -11,7 +11,9 @@ import { RepuestoProvAlmService } from '../repuesto-prov-alm.service';
 })
 export class ListarRepuestoComponent implements OnInit {
 
+  repupdate:Repprovalm;
   dialog:boolean=false;
+  dialogact:boolean=false;
   repuestos: Repprovalm[];
   repselect:string;
   constructor(private repservice:RepuestoProvAlmService ) { }
@@ -35,7 +37,10 @@ export class ListarRepuestoComponent implements OnInit {
   eliminar(id:number){
     this.repservice.delete(id).subscribe(a=>{this.loaddata()});
   }
-  Dialog(){
-    this.dialog=(this.dialog)?false:true;
+  openact(rep:Repprovalm){
+    this.repupdate=rep;
+    this.dialogact=true;
+
   }
+
 }

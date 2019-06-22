@@ -28,9 +28,9 @@ public class Comprobante {
 	@Column(name = "Fecha")
 	private Date Fecha;
 	@ManyToOne
-	@JoinColumn(name = "cliente_id")
+	@JoinColumn(name = "cliente_id",nullable=false)
 	private Cliente cliente;
 	@ManyToOne
-	@JoinColumn(name = "Tpago_id")
+	@JoinColumn(name = "Tpago_id",nullable=false)
 	private TipoPago tipopago;
 }

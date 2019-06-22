@@ -13,7 +13,7 @@ import {CrearCitaComponent} from './crear-cita/crear-cita.component'
 import {CitaListaComponent} from './cita-lista/cita-lista.component'
 import {DetaServListarComponent} from './deta-serv-listar/deta-serv-listar.component';
 import {DetaServCrearComponent} from './deta-serv-crear/deta-serv-crear.component';
-
+import {ActualizarRepuestoComponent} from './actualizar-repuesto/actualizar-repuesto.component'
 
 
 
@@ -31,7 +31,8 @@ const routes: Routes = [
     {path:'cita/nuevo',component:CrearCitaComponent},
     {path:'cita/listar',component:CitaListaComponent},
     {path:'detalleServ/nuevo',component:DetaServCrearComponent},
-    {path:'detalleServ/listar',component:DetaServListarComponent}
+    {path:'detalleServ/listar',component:DetaServListarComponent},
+    {path:'repuestos/actualizar',component:ActualizarRepuestoComponent}
 
 	
 ];

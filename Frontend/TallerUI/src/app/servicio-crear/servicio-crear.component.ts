@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
 import { Servicio } from '../model/servicio';
 import { ServicioService } from '../servicio.service';
 import { Cita } from '../model/cita';
@@ -21,9 +21,7 @@ export class ServicioCrearComponent implements OnInit {
     this.listarCitasXServ();
   }
   registrarServicio(){
-    this.servicio.Cita_Id.id=this.citasSelect.id;
-    this.servicio.Cita_Id.cod_vehiculo=this.citasSelect.cod_vehiculo;
-    this.servicio.Cita_Id.cod_asistente=this.citasSelect.cod_asistente;
+    this.servicio.cita_Id.id=this.citasSelect.id;
     this.ServicioService.createServicio(this.servicio)
     .subscribe(datos=>console.log(datos), error=>console.log(error));
     this.servicio = new Servicio();

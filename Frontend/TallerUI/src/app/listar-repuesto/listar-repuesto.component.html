@@ -1,10 +1,11 @@
 
-
+<app-registrar-repuesto *ngIf="dialog" ></app-registrar-repuesto>
+<app-actualizar-repuesto *ngIf="dialogact" [repuesto]="repupdate" ></app-actualizar-repuesto>
 
 <div  style="margin-top:10px;">
   <div class="row mx-1 mb-4">
       <div class="col-md-4  ">
-          <a class="btn btn-outline-success pull-right"  routerLink="/repuestos/nuevo" >
+          <a class="btn btn-outline-success pull-right"  (click)="dialog=true" >
               <i class="material-icons small">add</i>
             Crear</a>
        </div>
@@ -17,6 +18,7 @@
   </div>
   
 </div>
+
 <div class="table-responsive-md mx-3">
   <table class="table" >
     <thead class="thead-dark">
@@ -39,16 +41,17 @@
         <td>{{repuesto.fecha_ingreso}}</td>
         <td>{{repuesto.cantidad}}</td>
         <td>
-          <button type="button" class="btn btn-warning mr-4" (click)="eliminar(repuesto.cod_repuesto_prov_alm)" >
+          <button type="button" class="btn btn-warning mr-4" (click)="openact(repuesto)" >
                 <i class="material-icons small">border_color</i>
           </button>
-          <button type="button" class="btn btn-danger" (click)="eliminar(repuesto.cod_repuesto_prov_alm)" >
+          <button type="button" class="btn btn-danger" (click)= "eliminar(repuesto.cod_repuesto_prov_alm)" >
             <i class="material-icons small">close</i>
           </button>
-         
+          
         </td>
       </tr>
     </tbody>
+    
   </table>
 </div>
 </div>

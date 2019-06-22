@@ -20,4 +20,7 @@ export class RepuestoProvAlmService {
   delete(id:number):Observable<any>{
     return this.http.delete(`${this.baseURL}/${id}`,{responseType:'text'});
   }
+  update(repuesto:Repprovalm):Observable<Object>{
+    return this.http.put(`${this.baseURL}`,repuesto);
+  }
 }
