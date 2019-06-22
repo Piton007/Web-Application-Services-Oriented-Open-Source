@@ -1,17 +1,24 @@
 <br/>
 <h2>Listado de Clientes</h2>
 <br/>
-<div>
-  <form (ngSubmit)="SearchData()">
-    <div class="form-group col-md-6">
-      <label for ="apellido">Apellidos</label>
-      <input type="text" class="form-control" id="apellido" name="apellido" required [(ngModel)]="apellido" placeholder="Ingrese el apellido">
+
+<div  style="margin-top:10px;">
+    <div class="row mx-1 mb-4">
+        <div class="col-md-4  ">
+            <a class="btn btn-outline-success pull-right"  routerLink="/nuevo" >
+                <i class="material-icons small">add</i>
+              Crear</a>
+         </div>
+    <div class="input-group col-md-4 offset-md-4">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="basic-addon1">Cliente</span>
+      </div>
+      <input type="text" class="form-control" placeholder="Ingrese Nombre" aria-label="Repuesto" aria-describedby="basic-addon1"
+      (keyup)=Buscar() [(ngModel)]="cliselect">
     </div>
-    <div class="btn-group">
-      <button type="submit" class="btn btn-success">Buscar</button>
-    </div>
-  </form>
-</div>
+    
+  </div>
+
 <br/>
 <table class="table">
   <thead class="thead-dark">

@@ -1,28 +1,26 @@
-<form class="form-inline">
-    <div class="form-group">
-        <div class="row">
-            <div class="col-md-3 text-center">
-                <label for="placa"  >Placa</label>
-              </div>
-              <div class="col-md-2">
-                <input type="text"  class="form-control" id="placa" placeholder="Ingrese Placa">
-              </div>
-              <div class="offset-md-3 col-md-3">
-                  <button type="submit" class="btn btn-primary">Buscar</button>
-              </div>
-        </div>
-          
-        
+<div  style="margin-top:10px;">
+  <div class="row mx-1 mb-4">
+      <div class="col-md-4  ">
+          <a class="btn btn-outline-success pull-right"  routerLink="/vehiculo/nuevo" >
+              <i class="material-icons small">add</i>
+            Crear</a>
+       </div>
+  <div class="input-group col-md-4 offset-md-4">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">Vehiculo</span>
     </div>
-
-</form>
+    <input type="text" class="form-control" placeholder="Ingrese Placa" aria-label="Vehiculo" aria-describedby="basic-addon1"
+    (keyup)=Buscar() [(ngModel)]="vehselect">
+  </div>
+  
+</div>
 
 <table class="table">
     <thead class="thead-dark">
       <tr>
         <th scope="col">Id</th>
         <th scope="col">Placa</th>
-        <th scope="col">Año</th>
+        <th scope="col">Ano</th>
         <th scope="col">Serie Motor</th>
         <th scope="col">Tipo Vehiculo</th>
       </tr>
