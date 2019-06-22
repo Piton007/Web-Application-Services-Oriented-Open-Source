@@ -28,8 +28,8 @@ const routes: Routes = [
     {path:'servicio/buscar',component:ServicioBuscarComponent},
     {path:'repuestos/nuevo',component:RegistrarRepuestoComponent},
     {path:'repuestos',component:ListarRepuestoComponent},
-    {path:'cita/nuevo',component:CrearCitaComponent},
-    {path:'cita/listar',component:CitaListaComponent},
+    {path:'citas/nuevo',component:CrearCitaComponent},
+    {path:'citas',component:CitaListaComponent},
     {path:'detalleServ/nuevo',component:DetaServCrearComponent},
     {path:'detalleServ/listar',component:DetaServListarComponent},
     {path:'repuestos/actualizar',component:ActualizarRepuestoComponent}

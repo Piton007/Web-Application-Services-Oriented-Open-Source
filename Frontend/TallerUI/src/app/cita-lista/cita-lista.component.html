@@ -1,29 +1,55 @@
+﻿<app-crear-cita *ngIf="dialog" ></app-crear-cita>
+
 <br/>
-<h2>Listado de Citas</h2>
-<br/>
-<br/>
-<table class="table">
-  <thead class="thead-dark">
-    <tr>
-      <th scope="col">Id</th>
-      <th scope="col">Placa vehiculo</th>
-      <th scope="col">Asistente</th>
-      <th scope="col">descripcion</th>
-      <th scope="col">estado cita</th>
-      <th scope="col">Fecha de la cita</th>
-      <th scope="col">Acción</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr *ngFor="let cita of citas">
-      <td scope ="row">{{cita.id}}</td>
-      <td>{{cita.cod_vehiculo}}</td>
-      <td>{{cita.cod_asistente}}</td>
-      <td>{{cita.descripcion}}</td>
-      <td>{{cita.estado_cita}}</td>
-      <td>{{cita.fecha_reserva}}</td>
-      <td><button class="btn btn-danger" type="submit"
-        (click)='deleteServicio()'>Eliminar</button></td>
-    </tr>
-  </tbody>
-</table>
+<h2 class="row justify-content-center">Citas</h2>
+
+<div  style="margin-top:10px;">
+  <div class="row mx-1 mb-4">
+      <div class="col-md-4  ">
+          <a class="btn btn-outline-success pull-right"  (click)="dialog=true" >
+              <i class="material-icons small">add</i>
+            Crear</a>
+       </div>
+  <div class="input-group col-md-4 offset-md-4">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">Placa</span>
+    </div>
+    <input type="text" class="form-control" placeholder="Ingrese Placa" aria-label="Repuesto" aria-describedby="basic-addon1"
+    (keyup)=Buscar() [(ngModel)]="placaselect">
+  </div>
+  
+</div>
+<div class="table-responsive-md mx-3">
+  <table class="table"> 
+    <thead class="thead-dark">
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Placa vehiculo</th>
+        <th scope="col">Asistente</th>
+        <th scope="col">descripcion</th>
+        <th scope="col">estado cita</th>
+        <th scope="col">Fecha de la cita</th>
+        <th scope="col">Acción</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cita of citas">
+        <td scope ="row">{{cita.id}}</td>
+        <td>{{cita.cod_vehiculo.numero_placa}}</td>
+        <td>{{cita.cod_asistente.nombre_asistente}}</td>
+        <td>{{cita.descripcion}}</td>
+        <td>{{cita.estado_cita}}</td>
+        <td>{{cita.fecha_reserva}}</td>
+        <td>
+          <button type="button" class="btn btn-warning mr-4" (click)="openact(cita)" >
+                <i class="material-icons small">border_color</i>
+          </button>
+          <button type="button" class="btn btn-danger" (click)= "eliminar(cita.id)" >
+            <i class="material-icons small">close</i>
+          </button>
+          
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

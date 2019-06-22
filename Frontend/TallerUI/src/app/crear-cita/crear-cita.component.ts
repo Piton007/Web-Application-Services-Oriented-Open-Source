@@ -1,10 +1,11 @@
-import { Component, OnInit } from '@angular/core';
+﻿import { Component, OnInit } from '@angular/core';
 import { Cita } from '../model/cita';
 import { CitaService } from '../cita.service';
 import { Vehiculo } from '../model/vehiculo';
 import { Asistente } from '../model/asistente';
 import { VehiculoService } from '../vehiculo.service';
 import { AsistenteService } from '../asistente.service';
+import { CitaListaComponent } from '../cita-lista/cita-lista.component';
 
 @Component({
   selector: 'app-crear-cita',
@@ -22,17 +23,16 @@ export class CrearCitaComponent implements OnInit {
   asistenteselected:Asistente= new Asistente();
 
   constructor(private vehiculoservice:VehiculoService,
-    private asistenteservice:AsistenteService,private citaService:CitaService) { }
+    private asistenteservice:AsistenteService,private citaService:CitaService,
+    private listcitas:CitaListaComponent) { }
   ngOnInit() {
     this.loaddata();
   }
 
  
-  registrarCliente(){
-    let hoy= new Date(Date.now());
-    this.cita.cod_vehiculo.numero_placa=this.vehiculoselected.numero_placa;
-    this.cita.cod_asistente.nombre_asistente=this.asistenteselected.nombre_asistente;
-    this.cita.fecha_reserva=hoy;
+  registrarCita(){
+    this.cita.cod_vehiculo.id=this.vehiculoselected.id;
+    this.cita.cod_asistente.id=this.asistenteselected.id;
     this.citaService.createCita(this.cita).subscribe(datos=>console.log(datos), error=>console.log(error));
     this.cita= new Cita();
     }
@@ -44,4 +44,10 @@ export class CrearCitaComponent implements OnInit {
   
     }
 
+    control(){
+      let myDialog:any=<any>document.getElementById("dialogo");
+      this.listcitas.loadData();
+      this.listcitas.dialog=false;
+      myDialog.close();
+    }
 }
