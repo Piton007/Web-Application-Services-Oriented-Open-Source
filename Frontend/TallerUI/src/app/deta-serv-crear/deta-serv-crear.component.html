@@ -1,0 +1,67 @@
+<br/>
+<h2 class="row justify-content-center">Registro de DetalleServicio</h2>
+<br/>
+
+<div class="col-lg-12" style="margin-top:2px;">
+  <form (ngSubmit)="Submit()">
+      <div class="row-fluid">
+          <div class="form-group col-md-5">
+              <label for="servicio">Servicio:</label>
+              <select  name="servicio" class="form-control" id="servicio" [(ngModel)]="servicioselected" >
+                <option *ngFor="let servicio of servicios" [ngValue]="servicio">
+                  {{servicio.cod_servicio}}</option>
+              </select>  
+            </div>
+      </div>
+    <div class="row-fluid">
+        <div class="form-group col-md-5">
+            <label for="repuesto">Repuesto:</label>
+            <select  name="repuesto" class="form-control" id="repuesto" [(ngModel)]="repuestoselected" >
+              <option *ngFor="let rep of repuestos" [ngValue]="rep">
+                {{rep.nombre}}</option>
+            </select>  
+          </div>
+    </div>
+    <div class="row-fluid">
+      <div class="form-group col-md-5">
+          <label for="tecnico">Tecnico:</label>
+          <select  name="tecnico" class="form-control" id="tecnico" [(ngModel)]="tecnicoselected"  >
+            <option *ngFor="let tec of tecnicos" [ngValue]="tec">
+              {{tec.nombres_tecnico}}</option>
+          </select>  
+        </div>
+  </div>
+   
+    <div class="form-group row-fluid">
+      <div class="form-group col-md-5" >
+        <label for="cost">Costo:</label>
+        <input type="number" min=1  class="form-control" id="cost" name="cost" placeholder="Ingrese Costo"
+        
+        required [(ngModel)]="detaserv.cost_detalle">
+      </div>
+    </div>
+    <div class="form-group col-md-6">
+        <label for="fecha">Fecha :</label>
+         <input type="text" class="form-control" id="fecha" name="fecha" placeholder="Ingrese fecha"
+          required [(ngModel)]="detaserv.Fech_serv">
+     </div>
+     <div class="form-group row-fluid">
+        <div class="form-group col-md-5" >
+          <label for="cant">Cantidad:</label>
+          <input type="number" min=1  class="form-control" id="cant" name="cant" placeholder="Ingrese cantidad"
+          
+          required [(ngModel)]="detaserv.cant_rep">
+        </div>
+      </div>
+    
+    <div class="row-fluid">
+        <div class="form-group col-md-2 col-xs-6" >
+        <button  type="submit" class="btn btn-success form-control">Guardar</button>
+        </div>
+    </div>
+   
+  </form>
+
+</div>
+
+

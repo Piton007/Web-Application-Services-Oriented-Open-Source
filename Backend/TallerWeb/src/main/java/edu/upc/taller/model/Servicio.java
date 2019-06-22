@@ -23,9 +23,7 @@ public class Servicio {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer cod_servicio;
-	@Size(min=3,max = 20,message = "el nombre debe tener como minimo 3 caracteres")
-	@Column(name = "Nombre",nullable=false)
-	private String nombre;
+
 	@Size(max = 150,message = "Solo 150 caracteres como maximo")
 	@Column(name = "Descripcion")
 	private String descripcion;

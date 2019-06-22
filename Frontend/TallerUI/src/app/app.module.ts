@@ -19,6 +19,9 @@ import { CrearCitaComponent } from './crear-cita/crear-cita.component';
 import { CitaListaComponent } from './cita-lista/cita-lista.component';
 import { CitaDetalleComponent } from './cita-detalle/cita-detalle.component';
 import { ActualizarRepuestoComponent } from './actualizar-repuesto/actualizar-repuesto.component';
+import { DetaServListarComponent } from './deta-serv-listar/deta-serv-listar.component';
+import { DetaServCrearComponent } from './deta-serv-crear/deta-serv-crear.component';
+
 
 @NgModule({
   declarations: [
@@ -36,7 +39,10 @@ import { ActualizarRepuestoComponent } from './actualizar-repuesto/actualizar-re
     CrearCitaComponent,
     CitaListaComponent,
     CitaDetalleComponent,
-    ActualizarRepuestoComponent
+    ActualizarRepuestoComponent,
+    DetaServListarComponent,
+    DetaServCrearComponent
+
   ],
   imports: [
     BrowserModule,
