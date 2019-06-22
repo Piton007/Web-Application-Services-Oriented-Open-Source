@@ -10,7 +10,7 @@ import { Vehiculo } from '../model/vehiculo';
 export class ListarVehiculoComponent implements OnInit {
 
   vehiculos:Vehiculo[];
-
+  vehselect:string;
   constructor(private vehiculoservice:VehiculoService) { }
 
   ngOnInit() {
@@ -18,5 +18,14 @@ export class ListarVehiculoComponent implements OnInit {
   }
   loaddata(){
     this.vehiculoservice.getvehiculos().subscribe(vehiculos=>this.vehiculos=vehiculos);
+  }
+  Buscar(){
+    if (this.vehselect.length>0) {
+      this.vehiculos=this.vehiculos.filter(rep=>rep.numero_placa.trim().toLowerCase().includes(this.vehselect.trim().toLocaleLowerCase()));
+    }
+    else{
+      this.loaddata();
+    }
+    
   }
 }
