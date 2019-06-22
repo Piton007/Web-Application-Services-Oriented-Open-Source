@@ -3,6 +3,7 @@ import { Servicio } from '../model/servicio';
 import { ServicioService } from '../servicio.service';
 import { Cita } from '../model/cita';
 import { CitaService } from '../cita.service';
+import { ServicioListarComponent } from '../servicio-listar/servicio-listar.component';
 
 @Component({
   selector: 'app-servicio-crear',
@@ -15,7 +16,8 @@ export class ServicioCrearComponent implements OnInit {
   citas:Cita[];
   citasSelect:Cita=new Cita();
 
-  constructor(private citaService:CitaService,private ServicioService:ServicioService) { }
+  constructor(private citaService:CitaService,private ServicioService:ServicioService
+    ,private servList:ServicioListarComponent) { }
 
   ngOnInit() {
     this.listarCitasXServ();
@@ -28,6 +30,12 @@ export class ServicioCrearComponent implements OnInit {
   }
   listarCitasXServ(){
     this.citaService.getCitaList().subscribe(citas=>this.citas=citas);
+  }
+  control(){
+    let myDialog:any=<any>document.getElementById("dialogo");
+    this.servList.loadData();
+    this.servList.dialog=false;
+    myDialog.close();
   }
 
 }

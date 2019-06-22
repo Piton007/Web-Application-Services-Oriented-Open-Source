@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Servicio } from './model/servicio';
 
 @Injectable({
   providedIn: 'root'
@@ -17,10 +18,10 @@ export class ServicioService {
   getServicioList():Observable<any>{
     return this.http.get(`${this.baseURL}`);
   }
-  getServicio(id:number):Observable<any>{
-    return this.http.get(`${this.baseURL}/${id}`);
-  }
-  deleteServicio(id:number):Observable<any>{
+  delete(id:number):Observable<any>{
     return this.http.delete(`${this.baseURL}/${id}`,{responseType:'text'});
+  }
+  update(servicio:Servicio):Observable<Object>{
+    return this.http.put(`${this.baseURL}`,servicio);
   }
 }

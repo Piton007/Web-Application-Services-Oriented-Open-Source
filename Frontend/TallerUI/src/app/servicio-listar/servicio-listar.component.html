@@ -1,11 +1,19 @@
-﻿<br/>
-<br/>
-<h2>Lista</h2>
-<br/>
-<div class="col align-self-center">
+﻿<app-servicio-crear *ngIf="dialog" ></app-servicio-crear>
+<app-servicio-actualizar *ngIf="dialogact" [servicio]="servicioupdate" ></app-servicio-actualizar>
+
+<div  style="margin-top:10px;">
+  <div class="row mx-1 mb-4">
+      <div class="col-md-4  ">
+          <a class="btn btn-outline-success pull-right"  (click)="dialog=true" >
+              <i class="material-icons small">add</i>
+            Crear</a>
+       </div>
+</div>
+
+<div class="table-responsive-md mx-3">
   <table class="table" >
-    <thead class="thead-dark" >
-      <tr >
+    <thead class="thead-dark">
+      <tr> 
         <th scope="col">Id</th>
         <th scope="col">Descripcion</th>
         <th scope="col">Costo</th>
@@ -14,15 +22,23 @@
       </tr>
     </thead>
     <tbody>
-        <tr *ngFor="let servicio of servicios">
-          <td scope ="row">{{servicio.cod_servicio}}</td>
+      <tr *ngFor="let servicio of servicios">
+        <td scope ="row">{{servicio.cod_servicio}}</td>
           <td>{{servicio.descripcion}}</td>
           <td>{{servicio.cost_serv}}</td>
           <td>{{servicio.cita_Id.id}}</td>
-          <td><button class="btn btn-danger" type="submit"
-            (click)='deleteServicio()'>Eliminar</button></td>
-        </tr>
-      </tbody>
+        <td>
+          <button type="button" class="btn btn-warning mr-4" (click)="openact(servicio)" >
+                <i class="material-icons small">border_color</i>
+          </button>
+          <button type="button" class="btn btn-danger" (click)= "eliminar(servicio.cod_servicio)" >
+            <i class="material-icons small">close</i>
+          </button>
+          
+        </td>
+      </tr>
+    </tbody>
+    
   </table>
 </div>
-
+</div>

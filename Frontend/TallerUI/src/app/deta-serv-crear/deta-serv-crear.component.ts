@@ -39,7 +39,7 @@ export class DetaServCrearComponent implements OnInit {
     this.detaserv.servicio=this.servicioselected;
     this.detaserv.tecnico=this.tecnicoselected;
     this.detaserv.repuesto=this.repuestoselected;
-    this.detaserv.Fech_serv=hoy;
+    this.detaserv.fech_serv=hoy;
     this.DetServ.post(this.detaserv).subscribe(datos=>console.log(datos), error=>console.log(error));
     this.detaserv=new Detserv();
     this.loaddata();

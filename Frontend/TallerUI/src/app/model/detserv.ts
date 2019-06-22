@@ -8,6 +8,6 @@ export class Detserv {
     repuesto: Repuestos=new Repuestos();
     tecnico: Tecnico=new Tecnico();
     cost_detalle: number;
-    Fech_serv: Date;
+    fech_serv: Date;
     cant_rep: number;
 }
