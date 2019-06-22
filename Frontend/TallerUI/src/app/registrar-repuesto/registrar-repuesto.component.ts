@@ -15,6 +15,8 @@ import { RepuestoProvAlmService } from '../repuesto-prov-alm.service';
 })
 export class RegistrarRepuestoComponent implements OnInit {
 
+  showmodal:boolean=true;
+
   registro: Repprovalm=new Repprovalm();
   proveedores:Proveedor[];
   repuestos:Repuestos[];
@@ -32,7 +34,6 @@ export class RegistrarRepuestoComponent implements OnInit {
 
   
   loaddata(){
-  
     this.repuestoservice.getAll().subscribe(reps=>this.repuestos=reps);
     this.proveedorService.getProveedor().subscribe(provs=>this.proveedores=provs);
     this.almacenService.getAll().subscribe(alm=>this.almacenes=alm);
@@ -47,7 +48,8 @@ export class RegistrarRepuestoComponent implements OnInit {
     this.RepProvAlm.post(this.registro).subscribe(datos=>console.log(datos), error=>console.log(error));
     this.registro=new Repprovalm();
     this.loaddata();
-    
+    this.showmodal=false;
   }
+  
 
 }

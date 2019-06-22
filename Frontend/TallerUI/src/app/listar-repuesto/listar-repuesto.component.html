@@ -2,13 +2,21 @@
 
 
 <div  style="margin-top:10px;">
-  <div class="input-group mb-3 mt-4 col-md-4">
+  <div class="row mx-1 mb-4">
+      <div class="col-md-4  ">
+          <a class="btn btn-outline-success pull-right"  routerLink="/repuestos/nuevo" >
+              <i class="material-icons small">add</i>
+            Crear</a>
+       </div>
+  <div class="input-group col-md-4 offset-md-4">
     <div class="input-group-prepend">
       <span class="input-group-text" id="basic-addon1">Repuesto</span>
     </div>
     <input type="text" class="form-control" placeholder="Ingrese Nombre" aria-label="Repuesto" aria-describedby="basic-addon1"
     (keyup)=Buscar() [(ngModel)]="repselect">
   </div>
+  
+</div>
 <div class="table-responsive-md mx-3">
   <table class="table" >
     <thead class="thead-dark">
@@ -19,6 +27,7 @@
         <th scope="col">Almacen</th>
         <th scope="col">Fecha</th>
         <th scope="col">Cantidad</th>
+        <th scope="col">Acciones</th>
       </tr>
     </thead>
     <tbody>
@@ -29,8 +38,19 @@
         <td>{{repuesto.almacen.nombre_almacen}}</td>
         <td>{{repuesto.fecha_ingreso}}</td>
         <td>{{repuesto.cantidad}}</td>
+        <td>
+          <button type="button" class="btn btn-warning mr-4" (click)="eliminar(repuesto.cod_repuesto_prov_alm)" >
+                <i class="material-icons small">border_color</i>
+          </button>
+          <button type="button" class="btn btn-danger" (click)="eliminar(repuesto.cod_repuesto_prov_alm)" >
+            <i class="material-icons small">close</i>
+          </button>
+         
+        </td>
       </tr>
     </tbody>
   </table>
 </div>
 </div>
+
+

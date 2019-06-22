@@ -21,7 +21,7 @@ const routes: Routes = [
     {path:'servicio/nuevo',component:ServicioCrearComponent},
     {path:'servicio/buscar',component:ServicioBuscarComponent},
     {path:'repuestos/nuevo',component:RegistrarRepuestoComponent},
-    {path:'repuestos/listar',component:ListarRepuestoComponent},
+    {path:'repuestos',component:ListarRepuestoComponent},
     {path:'cita/nuevo',component:CrearCitaComponent},
     {path:'cita/listar',component:CitaListaComponent}
 	

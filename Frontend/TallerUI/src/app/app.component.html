@@ -5,7 +5,8 @@
     {{ title }}!
   </h1>
 </div>
-<ul class="nav nav-tabs">
+
+<ul class="nav nav-tab">
   <li class="nav-item">
     <a class="nav-link" routerLink="listar">Listar Cliente</a>
   </li>
@@ -28,14 +29,14 @@
     <a class="nav-link" routerLink="servicio/buscar">Buscar Servicio</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" routerLink="repuestos/nuevo">Crear Repuesto</a>
-  </li>
-  <li class="nav-item">
-    <a class="nav-link" routerLink="repuestos/listar">Listar Repuesto</a>
-    <a class="nav-link" routerLink="cita/nuevo">Nueva cita</a>
+    <a class="nav-link" routerLink="repuestos">Listar Repuesto</a>
+    
   </li>
   <li class="nav-item">
     <a class="nav-link" routerLink="cita/listar">Listar Cita</a>
   </li>
+  <li>
+  <a class="nav-link" routerLink="cita/nuevo">Nueva cita</a>
+</li>
 </ul>
 <router-outlet></router-outlet>

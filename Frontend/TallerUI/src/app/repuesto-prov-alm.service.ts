@@ -17,4 +17,7 @@ export class RepuestoProvAlmService {
   post(repuesto:Repprovalm):Observable<Object>{
     return this.http.post(`${this.baseURL}`,repuesto);
   }
+  delete(id:number):Observable<any>{
+    return this.http.delete(`${this.baseURL}/${id}`,{responseType:'text'});
+  }
 }

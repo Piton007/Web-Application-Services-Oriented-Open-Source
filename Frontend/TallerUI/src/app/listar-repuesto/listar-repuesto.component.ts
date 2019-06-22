@@ -11,6 +11,7 @@ import { RepuestoProvAlmService } from '../repuesto-prov-alm.service';
 })
 export class ListarRepuestoComponent implements OnInit {
 
+  dialog:boolean=false;
   repuestos: Repprovalm[];
   repselect:string;
   constructor(private repservice:RepuestoProvAlmService ) { }
@@ -29,5 +30,12 @@ export class ListarRepuestoComponent implements OnInit {
       this.loaddata();
     }
     
+  }
+
+  eliminar(id:number){
+    this.repservice.delete(id).subscribe(a=>{this.loaddata()});
+  }
+  Dialog(){
+    this.dialog=(this.dialog)?false:true;
   }
 }
