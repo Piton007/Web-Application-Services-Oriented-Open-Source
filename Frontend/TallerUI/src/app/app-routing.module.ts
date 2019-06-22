@@ -6,7 +6,6 @@ import {CrearVehiculoComponent} from './crear-vehiculo/crear-vehiculo.component'
 import {ListarVehiculoComponent} from './listar-vehiculo/listar-vehiculo.component';
 import {ServicioListarComponent} from './servicio-listar/servicio-listar.component';
 import {ServicioCrearComponent} from './servicio-crear/servicio-crear.component';
-import {ServicioBuscarComponent} from './servicio-buscar/servicio-buscar.component';
 import {RegistrarRepuestoComponent} from './registrar-repuesto/registrar-repuesto.component';
 import {ListarRepuestoComponent} from './listar-repuesto/listar-repuesto.component';
 import {CrearCitaComponent} from './crear-cita/crear-cita.component'
@@ -25,7 +24,6 @@ const routes: Routes = [
     {path:'vehiculo/listar',component:ListarVehiculoComponent},
     {path:'servicio/listar',component:ServicioListarComponent},
     {path:'servicio/nuevo',component:ServicioCrearComponent},
-    {path:'servicio/buscar',component:ServicioBuscarComponent},
     {path:'repuestos/nuevo',component:RegistrarRepuestoComponent},
     {path:'repuestos',component:ListarRepuestoComponent},
     {path:'cita/nuevo',component:CrearCitaComponent},

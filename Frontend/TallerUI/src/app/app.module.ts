@@ -11,7 +11,6 @@ import { ClienteDetalleComponent } from './cliente-detalle/cliente-detalle.compo
 import { CrearVehiculoComponent } from './crear-vehiculo/crear-vehiculo.component';
 import { ListarVehiculoComponent } from './listar-vehiculo/listar-vehiculo.component';
 import { ServicioListarComponent } from './servicio-listar/servicio-listar.component';
-import { ServicioBuscarComponent } from './servicio-buscar/servicio-buscar.component';
 import { ServicioCrearComponent } from './servicio-crear/servicio-crear.component';
 import { RegistrarRepuestoComponent } from './registrar-repuesto/registrar-repuesto.component';
 import { ListarRepuestoComponent } from './listar-repuesto/listar-repuesto.component';
@@ -21,6 +20,7 @@ import { CitaDetalleComponent } from './cita-detalle/cita-detalle.component';
 import { ActualizarRepuestoComponent } from './actualizar-repuesto/actualizar-repuesto.component';
 import { DetaServListarComponent } from './deta-serv-listar/deta-serv-listar.component';
 import { DetaServCrearComponent } from './deta-serv-crear/deta-serv-crear.component';
+import { ServicioActualizarComponent } from './servicio-actualizar/servicio-actualizar.component';
 
 
 @NgModule({
@@ -32,7 +32,6 @@ import { DetaServCrearComponent } from './deta-serv-crear/deta-serv-crear.compon
     CrearVehiculoComponent,
     ListarVehiculoComponent,
     ServicioListarComponent,
-    ServicioBuscarComponent,
     ServicioCrearComponent,
     RegistrarRepuestoComponent,
     ListarRepuestoComponent,
@@ -42,6 +41,7 @@ import { DetaServCrearComponent } from './deta-serv-crear/deta-serv-crear.compon
     ActualizarRepuestoComponent,
     DetaServListarComponent,
     DetaServCrearComponent,
+    ServicioActualizarComponent,
 
   ],
   imports: [

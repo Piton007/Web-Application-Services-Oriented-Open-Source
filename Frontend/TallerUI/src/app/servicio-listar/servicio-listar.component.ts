@@ -9,9 +9,11 @@ import { ServicioService } from '../servicio.service';
 })
 export class ServicioListarComponent implements OnInit {
 
-  id:number;
-  servicio:Servicio;
+  servicioupdate:Servicio;
   servicios:Servicio[];
+  servselect:string;
+  dialog:boolean=false;
+  dialogact:boolean=false;
 
   constructor(private servicioService:ServicioService) { }
 
@@ -22,9 +24,25 @@ export class ServicioListarComponent implements OnInit {
     this.servicioService.getServicioList()
     .subscribe(servicios=>this.servicios=servicios);
   }
-  deleteServicio(){
-    this.servicioService.deleteServicio(this.servicio.cod_servicio)
-    .subscribe(datos=>{this.loadData();})
+  // Buscar(){
+  //   if (this.servselect.length>0) {
+  //     this.servicios=this.servicios.filter(rep=>rep.cita_Id.trim().toLowerCase().includes(this.repselect.trim().toLocaleLowerCase()));
+  //   }
+  //   else{
+  //     this.loaddata();
+  //   }
+    
+  // }
+
+  eliminar(id:number){
+    this.servicioService.delete(id).subscribe(a=>{this.loadData()});
   }
+  openact(ser:Servicio){
+    this.servicioupdate=ser;
+    this.dialogact=true;
+
+  }
+
+
 
 }
