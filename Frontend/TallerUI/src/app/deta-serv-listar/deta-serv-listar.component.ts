@@ -14,6 +14,7 @@ export class DetaServListarComponent implements OnInit {
   constructor(private detservice:DetalleServicioService) { }
 
   ngOnInit() {
+    this.loaddata();
   }
 
   loaddata(){

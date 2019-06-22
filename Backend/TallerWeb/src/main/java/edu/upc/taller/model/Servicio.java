@@ -32,6 +32,4 @@ public class Servicio {
 	@ManyToOne
 	@JoinColumn(name="Cita_Id",nullable=false)
 	private Cita Cita_Id;
-	@OneToMany(mappedBy = "servicio",fetch = FetchType.LAZY,orphanRemoval = true)
-	private List<DetServicio>detalles;
 }

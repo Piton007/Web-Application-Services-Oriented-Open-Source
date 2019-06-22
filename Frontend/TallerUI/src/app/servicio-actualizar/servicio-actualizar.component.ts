@@ -18,6 +18,7 @@ export class ServicioActualizarComponent implements OnInit {
   constructor(private citaservice:CitaService,private servicioService: ServicioService, private servList:ServicioListarComponent) { }
 
   ngOnInit() {
+    this.loaddata();
   }
 
   loaddata(){
@@ -28,7 +29,7 @@ export class ServicioActualizarComponent implements OnInit {
   Submit(){
     this.servicio.cita_Id.id=this.citaselected.id;
     this.servicioService.update(this.servicio).subscribe(datos=>console.log(datos), error=>console.log(error));
-    this.loaddata();
+
     let myDialog:any=<any>document.getElementById("dialogo");
     this.servList.loadData();
     this.servList.dialogact=false;

@@ -34,6 +34,7 @@ export class CrearVehiculoComponent implements OnInit {
     this.vehiculo.cod_modelo.cod_marca=this.modeloselected.cod_marca;
     this.vehiculo.cod_cliente.id=this.cli.id;
     this.vehiculoservice.postvehiculo(this.vehiculo).subscribe(datos=>console.log(datos), error=>console.log(error));
+    this.vehiculo=new Vehiculo();
   }
   loaddata(){
    
