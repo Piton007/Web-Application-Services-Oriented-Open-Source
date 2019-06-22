@@ -11,6 +11,8 @@ import {CrearCitaComponent} from './crear-cita/crear-cita.component'
 import {CitaListaComponent} from './cita-lista/cita-lista.component'
 import {RegistrarRepuestoComponent} from './registrar-repuesto/registrar-repuesto.component';
 import {ListarRepuestoComponent} from './listar-repuesto/listar-repuesto.component';
+import {DetaServListarComponent} from './deta-serv-listar/deta-serv-listar.component';
+import {DetaServCrearComponent} from './deta-serv-crear/deta-serv-crear.component';
 
 const routes: Routes = [
     {path:'', redirectTo:'cliente', pathMatch:'full'},
@@ -24,7 +26,9 @@ const routes: Routes = [
     {path:'cita/nuevo',component:CrearCitaComponent},
     {path:'cita/listar',component:CitaListaComponent},
     {path:'repuestos/nuevo',component:RegistrarRepuestoComponent},
-    {path:'repuestos/listar',component:ListarRepuestoComponent}
+    {path:'repuestos/listar',component:ListarRepuestoComponent},
+    {path:'detalleServ/nuevo',component:DetaServCrearComponent},
+    {path:'detalleServ/listar',component:DetaServListarComponent}
 	
 ];
 

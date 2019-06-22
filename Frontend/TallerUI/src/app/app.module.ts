@@ -18,6 +18,8 @@ import { CitaListaComponent } from './cita-lista/cita-lista.component';
 import { CitaDetalleComponent } from './cita-detalle/cita-detalle.component';
 import { ListarRepuestoComponent } from './listar-repuesto/listar-repuesto.component';
 import { RegistrarRepuestoComponent } from './registrar-repuesto/registrar-repuesto.component';
+import { DetaServListarComponent } from './deta-serv-listar/deta-serv-listar.component';
+import { DetaServCrearComponent } from './deta-serv-crear/deta-serv-crear.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,9 @@ import { RegistrarRepuestoComponent } from './registrar-repuesto/registrar-repue
     CitaListaComponent,
     CitaDetalleComponent,
     ListarRepuestoComponent,
-    RegistrarRepuestoComponent
+    RegistrarRepuestoComponent,
+    DetaServListarComponent,
+    DetaServCrearComponent
   ],
   imports: [
     BrowserModule,

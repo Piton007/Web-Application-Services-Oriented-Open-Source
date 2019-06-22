@@ -1,0 +1,26 @@
+<div class="table-responsive-md mx-3">
+  <table class="table" >
+    <thead class="thead-dark">
+      <tr> 
+        <th scope="col">Id</th>
+        <th scope="col">Servicio</th>
+        <th scope="col">Repuesto</th>
+        <th scope="col">Tecnico</th>
+        <th scope="col">Costo</th>
+        <th scope="col">Fecha</th>
+        <th scope="col">Cantidad</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let detserv of detservs">
+        <th scope="row">{{detserv.cod_det_serv}}</th>
+        <td>{{detserv.servicio.cod_servicio}}</td>
+        <td>{{detserv.repuesto.nombre}}</td>
+        <td>{{detserv.tecnico.nombres_tecnico}}</td>
+        <td>{{detserv.cost_detalle}}</td>
+        <td>{{detserv.Fech_serv}}</td>
+        <td>{{detserv.cant_rep}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
