@@ -21,6 +21,10 @@ import { ActualizarRepuestoComponent } from './actualizar-repuesto/actualizar-re
 import { DetaServListarComponent } from './deta-serv-listar/deta-serv-listar.component';
 import { DetaServCrearComponent } from './deta-serv-crear/deta-serv-crear.component';
 import { ServicioActualizarComponent } from './servicio-actualizar/servicio-actualizar.component';
+import { LoginComponent } from './login/login.component';
+import { LogoutComponent } from './logout/logout.component';
+import { HeaderComponent } from './header/header.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 
 @NgModule({
@@ -42,6 +46,10 @@ import { ServicioActualizarComponent } from './servicio-actualizar/servicio-actu
     DetaServListarComponent,
     DetaServCrearComponent,
     ServicioActualizarComponent,
+    LoginComponent,
+    LogoutComponent,
+    HeaderComponent,
+    NavbarComponent,
 
   ],
   imports: [

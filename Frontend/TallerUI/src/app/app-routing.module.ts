@@ -13,12 +13,12 @@ import {CitaListaComponent} from './cita-lista/cita-lista.component'
 import {DetaServListarComponent} from './deta-serv-listar/deta-serv-listar.component';
 import {DetaServCrearComponent} from './deta-serv-crear/deta-serv-crear.component';
 import {ActualizarRepuestoComponent} from './actualizar-repuesto/actualizar-repuesto.component'
-
-
+import { LoginComponent } from './login/login.component'
+import { LogoutComponent } from './logout/logout.component'
 
 const routes: Routes = [
     {path:'', redirectTo:'/nuevo', pathMatch:'full'},
-    {path:'listar', component:ClientesListaComponent},
+    {path:'listar', component:ClientesListaComponent },
     {path:'nuevo', component:CrearClienteComponent},
     {path:'vehiculo/nuevo', component:CrearVehiculoComponent},
     {path:'vehiculo/listar',component:ListarVehiculoComponent},
@@ -30,7 +30,9 @@ const routes: Routes = [
     {path:'citas',component:CitaListaComponent},
     {path:'detalleServ/nuevo',component:DetaServCrearComponent},
     {path:'detalleServ/listar',component:DetaServListarComponent},
-    {path:'repuestos/actualizar',component:ActualizarRepuestoComponent}
+    {path:'repuestos/actualizar',component:ActualizarRepuestoComponent},
+    {path: 'login', component: LoginComponent },
+    {path: 'logout', component: LogoutComponent }
 
 	
 ];
