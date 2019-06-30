@@ -27,6 +27,7 @@ import { HeaderComponent } from './header/header.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,7 +50,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     LoginComponent,
     LogoutComponent,
     HeaderComponent,
-    NavbarComponent,
+    NavbarComponent
 
   ],
   imports: [

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Cita } from '../model/cita';
 import { CitaService } from '../cita.service';
+import { AuthenticationService } from '../service/authentication.service';
 
 @Component({
   selector: 'app-cita-lista',
@@ -14,7 +15,7 @@ export class CitaListaComponent implements OnInit {
   citas:Cita[];
   dialog:boolean=false;
   dialogact:boolean=false;
-  constructor(private citaService:CitaService) { }
+  constructor(private citaService:CitaService, private autenticar:AuthenticationService) { }
 
   ngOnInit() {
     this.loadData();
@@ -41,5 +42,11 @@ export class CitaListaComponent implements OnInit {
     this.dialogact=true;
 
   }
-
+  done(cita:Cita){
+    cita.estado_cita=1;
+    this.citaService.updateCita(cita).subscribe(a=>{this.loadData});
+  }
+  estado(cita:Cita){
+    return (cita.estado_cita==0)?"pendiente":"terminado";
+  }
 }

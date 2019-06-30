@@ -1,25 +1,31 @@
 
 <nav class="navbar navbar-expand-sm bg-primary">
-  <div style="text-align:center">
-      <li class="material-icons" style="color:red; font-size:50px">directions_car</li>
-       <a class="navbar-brand" style="color:white;font-family: times, serif; font-size:20pt; font-style:italic" routerLink="/">SuperDrive</a>
+  <div class="padding: 0px" >
+      
+       <a class="navbar-brand"  style="color:white;font-family: times, serif; font-size:20pt; font-style:italic" routerLink="/">Super
+      </a>
+      <li class="material-icons"  style="color:red; font-size:50px">directions_car</li>
+      <a class="navbar-brand"  style="color:white;font-family: times, serif; font-size:20pt; font-style:italic" routerLink="/">Drive
+      </a>
+        
+        
     </div>
     <div class="collapse navbar-collapse" style="color:white" id="mainNavbar">
 <ul class="navbar-nav  ml-auto ">
-<li class="nav-item "><a *ngIf="loginService.isUserLoggedIn()" class="nav-link" style="color:white" routerLink="listar">Cliente</a></li>
- <li class="nav-item "> <a  *ngIf="loginService.isUserLoggedIn()" class="nav-link" style="color:white"  routerLink="vehiculo/listar">Vehiculo</a>
+<li class="nav-item "><a *ngIf="loginService.isAdminLoggedIn()" class="nav-link" style="color:white" routerLink="listar">Cliente</a></li>
+ <li class="nav-item "> <a  *ngIf="loginService.isClientLoggedIn()" class="nav-link" style="color:white"  routerLink="vehiculo/listar">Vehiculo</a>
 </li>
 <li class="nav-item ">
-  <a *ngIf="loginService.isUserLoggedIn()" class="nav-link"  style="color:white" routerLink="servicio/listar">Servicio</a>
+  <a *ngIf="loginService.isAdminLoggedIn()" class="nav-link"  style="color:white" routerLink="servicio">Servicio</a>
 </li>
 <li class="nav-item ">
-  <a  *ngIf="loginService.isUserLoggedIn()" class="nav-link"  style="color:white" routerLink="repuestos">Repuesto</a>
+  <a  *ngIf="loginService.isAlmacenLoggedIn()" class="nav-link"  style="color:white" routerLink="repuestos">Repuesto</a>
 </li>
 <li class="nav-item ">
-  <a *ngIf="loginService.isUserLoggedIn()"  class="nav-link" style="color:white"  routerLink="citas">Cita</a>
+  <a *ngIf="loginService.isAdminLoggedIn() || loginService.isClientLoggedIn()"  class="nav-link" style="color:white"  routerLink="citas">Cita</a>
 </li>
 <li class="nav-item ">
-<a *ngIf="loginService.isUserLoggedIn()" class="nav-link"  style="color:white"  routerLink="detalleServ/listar">DetalleServicio</a>
+<a *ngIf="loginService.isAdminLoggedIn()" class="nav-link"  style="color:white"  routerLink="detalleServ/listar">DetalleServicio</a>
 </li>
 
 <li class="nav-item "><a *ngIf="loginService.isUserLoggedIn()" style="color:white" routerLink="/logout" class="nav-link">LogOut</a></li>

@@ -10,8 +10,8 @@ import { AuthenticationService } from '../service/authentication.service';
 })
 export class LoginComponent implements OnInit {
 
-  username = 'password'
-  password = 'password'
+  private _username = ''
+  password = ''
   invalidLogin = false
 
   constructor(private router: Router,private loginservice: AuthenticationService) { }
@@ -19,18 +19,51 @@ export class LoginComponent implements OnInit {
 
   
   public isError = false;
+  
+  set username(v : string) {
+    this._username= v;
+    if (this._username.length>0) {
+      this.isError=false;
+    }
+  }
+  
+   get username() : string {
+    return this._username 
+  }
+  
+  
   ngOnInit() {
   }
 
   
 
   checkLogin() {
-    if (this.loginservice.authenticate(this.username, this.password)
-    ) {
-      this.router.navigate([''])
-      this.invalidLogin = false
-    } else
-      this.invalidLogin = true
+    if (this.loginservice.authenticate(this._username, this.password)) {
+      this.invalidLogin = false;
+      if (this.loginservice.isClientLoggedIn()) {
+        this.router.navigate(['citas']);
+      }
+      else{
+      if (this.loginservice.isAdminLoggedIn()) {
+        this.router.navigate(['servicio']);
+      }
+      else{
+       
+          this.router.navigate(['repuestos']);
+        
+      }
+    }
+     
+      
+      
+    } else{
+      this.invalidLogin = true;
+      this.isError=true;
+     
+    }
+    this._username="";
+    this.password='';
+      
   }
 
 }

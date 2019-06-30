@@ -18,6 +18,7 @@ public class CitaServiceImpl implements ICitaService{
 	
 	@Override
 	public Cita registrar(Cita t) {
+		t.setEstado_cita(0);
 		return citaRepository.save(t);
 	}
 

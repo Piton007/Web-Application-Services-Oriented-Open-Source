@@ -16,13 +16,15 @@ import {ActualizarRepuestoComponent} from './actualizar-repuesto/actualizar-repu
 import { LoginComponent } from './login/login.component'
 import { LogoutComponent } from './logout/logout.component'
 
+
+
 const routes: Routes = [
-    {path:'', redirectTo:'/nuevo', pathMatch:'full'},
+    {path:'', redirectTo:'/login', pathMatch:'full'},
     {path:'listar', component:ClientesListaComponent },
     {path:'nuevo', component:CrearClienteComponent},
     {path:'vehiculo/nuevo', component:CrearVehiculoComponent},
     {path:'vehiculo/listar',component:ListarVehiculoComponent},
-    {path:'servicio/listar',component:ServicioListarComponent},
+    {path:'servicio',component:ServicioListarComponent},
     {path:'servicio/nuevo',component:ServicioCrearComponent},
     {path:'repuestos/nuevo',component:RegistrarRepuestoComponent},
     {path:'repuestos',component:ListarRepuestoComponent},
@@ -32,7 +34,8 @@ const routes: Routes = [
     {path:'detalleServ/listar',component:DetaServListarComponent},
     {path:'repuestos/actualizar',component:ActualizarRepuestoComponent},
     {path: 'login', component: LoginComponent },
-    {path: 'logout', component: LogoutComponent }
+    {path: 'logout', component: LogoutComponent}
+
 
 	
 ];
