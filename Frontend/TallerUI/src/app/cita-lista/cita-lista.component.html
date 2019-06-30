@@ -39,19 +39,19 @@
         <td>{{cita.cod_asistente.nombre_asistente}}</td>
         <td>{{estado(cita)}}</td>
         <td>{{cita.fecha_reserva}}</td>
-        <td>
+        <td >
           
           <button type="button" class="btn btn-warning mr-4" (click)="openact(cita)" >
                 <i class="material-icons small">border_color</i>
           </button>
           
-          <button type="button" class="btn btn-danger mr-4" (click)= "eliminar(cita.id)" >
+          <button  type="button" class="btn btn-danger mr-4" (click)= "eliminar(cita.id)" >
             <i class="material-icons small">close</i>
           </button>
-          <button *ngIf="cita.estado_cita==0" type="button" class="btn btn-success" (click)= "done(cita)" >
+          <button *ngIf ="autenticar.isAdminLoggedIn() && cita.estado_cita==0"  type="button" class="btn btn-success mr-4" (click)= "done(cita)" >
               <i class="material-icons small">done</i>
             </button>
-          
+            
         </td>
       </tr>
     </tbody>
