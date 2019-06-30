@@ -26,7 +26,7 @@
       <tr *ngFor="let detserv of detservs">
         <th scope="row">{{detserv.cod_det_serv}}</th>
         <td>{{detserv.servicio.cod_servicio}}</td>
-        <td>{{detserv.repuesto.nombre}}</td>
+        <td>{{detserv.repuestoDet.repuesto.nombre}}</td>
         <td>{{detserv.tecnico.nombres_tecnico}}</td>
         <td>{{detserv.cost_detalle}}</td>
         <td>{{detserv.fech_serv}}</td>

@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Detserv } from '../model/detserv';
-import { Repuestos } from '../model/repuestos';
 import { Servicio } from '../model/servicio';
 import { Tecnico } from '../model/tecnico';
-import { RepuestosService } from '../repuestos.service';
+import { RepuestoProvAlmService } from '../repuesto-prov-alm.service';
 import { TecnicoService } from '../tecnico.service';
 import { ServicioService } from '../servicio.service';
 import { DetalleServicioService } from '../detalle-servicio.service';
+import { Repprovalm } from '../model/repprovalm';
 
 @Component({
   selector: 'app-deta-serv-crear',
@@ -15,13 +15,13 @@ import { DetalleServicioService } from '../detalle-servicio.service';
 })
 export class DetaServCrearComponent implements OnInit {
   detaserv: Detserv=new Detserv();
-  repuestos:Repuestos[];
+  repuestosDet:Repprovalm[];
   servicios:Servicio[];
   tecnicos:Tecnico[];
-  repuestoselected:Repuestos=new Repuestos();
+  repuestosDetselected:Repprovalm=new Repprovalm();
   servicioselected:Servicio=new Servicio();
   tecnicoselected:Tecnico=new Tecnico();
-  constructor(private repuestoservice:RepuestosService, private tecnicoservice:TecnicoService, 
+  constructor(private repuestoDetservice:RepuestoProvAlmService, private tecnicoservice:TecnicoService, 
     private servicioservice:ServicioService, private DetServ: DetalleServicioService) { }
 
   ngOnInit() {
@@ -29,7 +29,7 @@ export class DetaServCrearComponent implements OnInit {
   }
   loaddata(){
   
-    this.repuestoservice.getAll().subscribe(reps=>this.repuestos=reps);
+    this.repuestoDetservice.getAll().subscribe(reps=>this.repuestosDet=reps);
     this.tecnicoservice.getAll().subscribe(tecns=>this.tecnicos=tecns);
     this.servicioservice.getServicioList().subscribe(serv=>this.servicios=serv);
 
@@ -38,7 +38,7 @@ export class DetaServCrearComponent implements OnInit {
     let hoy= new Date(Date.now());
     this.detaserv.servicio=this.servicioselected;
     this.detaserv.tecnico=this.tecnicoselected;
-    this.detaserv.repuesto=this.repuestoselected;
+    this.detaserv.repuestoDet=this.repuestosDetselected;
     this.detaserv.fech_serv=hoy;
     this.DetServ.post(this.detaserv).subscribe(datos=>console.log(datos), error=>console.log(error));
     this.detaserv=new Detserv();

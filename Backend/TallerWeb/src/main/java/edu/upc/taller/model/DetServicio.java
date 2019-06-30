@@ -26,8 +26,8 @@ public class DetServicio {
 	@JoinColumn(name = "servicio_id",nullable=false)
 	private Servicio servicio;
 	@ManyToOne
-	@JoinColumn(name = "repuesto_id",nullable=false)
-	private Repuesto repuesto;
+	@JoinColumn(name = "repuestoDet_id",nullable=false)
+	private Repuesto_proveedor_almacen repuestoDet;
 	@ManyToOne
 	@JoinColumn(name = "tecnico_id",nullable=false)
 	private Tecnico tecnico;

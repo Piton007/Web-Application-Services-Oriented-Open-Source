@@ -8,7 +8,9 @@ import org.springframework.stereotype.Service;
 
 import edu.upc.taller.controller.service.IDetServService;
 import edu.upc.taller.model.DetServicio;
+import edu.upc.taller.model.Repuesto_proveedor_almacen;
 import edu.upc.taller.model.repository.IDetServRepository;
+import edu.upc.taller.model.repository.IRepuesto_proveedor_almacenRepository;
 
 
 @Service
@@ -19,6 +21,13 @@ public class DetServServiceImpl implements IDetServService {
 	@Override
 	public DetServicio registrar(DetServicio t) {
 		// TODO Auto-generated method stub
+		
+		double costo=t.getRepuestoDet().getRepuesto().getPrecio()*t.getCant_rep();
+		t.setCost_detalle(costo);
+
+		int desc=t.getRepuestoDet().getCantidad()-t.getCant_rep();
+		t.getRepuestoDet().setCantidad(desc);
+
 		return det_serv_repository.save(t);
 	}
 
