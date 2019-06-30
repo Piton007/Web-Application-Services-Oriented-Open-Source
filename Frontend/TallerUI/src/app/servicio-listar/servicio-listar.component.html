@@ -1,4 +1,4 @@
-﻿<app-servicio-crear *ngIf="dialog" ></app-servicio-crear>
+﻿<app-servicio-crear *ngIf="dialog" [cita_id]="id" ></app-servicio-crear>
 <app-servicio-actualizar *ngIf="dialogact" [servicio]="servicioupdate" ></app-servicio-actualizar>
 
 <br/>
@@ -8,7 +8,7 @@
 <div  style="margin-top:10px;">
   <div class="row mx-1 mb-4">
       <div class="col-md-4  ">
-          <a class="btn btn-outline-success pull-right"  (click)="dialog=true" >
+          <a *ngIf="autenticar.isAdminLoggedIn()" class="btn btn-outline-success pull-right"  (click)="dialog=true" >
               <i class="material-icons small">add</i>
             Crear</a>
        </div>
@@ -21,7 +21,7 @@
         <th scope="col">Id</th>
         <th scope="col">Descripcion</th>
         <th scope="col">Costo</th>
-        <th scope="col">Cita</th>
+        <th scope="col">Vehiculo</th>
         <th scope="col">Acción</th>
       </tr>
     </thead>
@@ -30,7 +30,7 @@
         <td scope ="row">{{servicio.cod_servicio}}</td>
           <td>{{servicio.descripcion}}</td>
           <td>{{servicio.cost_serv}}</td>
-          <td>{{servicio.cita_Id.id}}</td>
+          <td>{{servicio.cita_Id.cod_vehiculo.numero_placa}}</td>
         <td>
           <button type="button" class="btn btn-warning mr-4" (click)="openact(servicio)" >
                 <i class="material-icons small">border_color</i>

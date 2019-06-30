@@ -16,16 +16,13 @@
  <li class="nav-item "> <a  *ngIf="loginService.isClientLoggedIn()" class="nav-link" style="color:white"  routerLink="vehiculo/listar">Vehiculo</a>
 </li>
 <li class="nav-item ">
-  <a *ngIf="loginService.isAdminLoggedIn()" class="nav-link"  style="color:white" routerLink="servicio">Servicio</a>
-</li>
-<li class="nav-item ">
   <a  *ngIf="loginService.isAlmacenLoggedIn()" class="nav-link"  style="color:white" routerLink="repuestos">Repuesto</a>
 </li>
 <li class="nav-item ">
   <a *ngIf="loginService.isAdminLoggedIn() || loginService.isClientLoggedIn()"  class="nav-link" style="color:white"  routerLink="citas">Cita</a>
 </li>
 <li class="nav-item ">
-<a *ngIf="loginService.isAdminLoggedIn()" class="nav-link"  style="color:white"  routerLink="detalleServ/listar">DetalleServicio</a>
+<a *ngIf="loginService.isAdminLoggedIn() || loginService.isClientLoggedIn()" class="nav-link"  style="color:white"  routerLink="detalleServ/listar">DetalleServicio</a>
 </li>
 
 <li class="nav-item "><a *ngIf="loginService.isUserLoggedIn()" style="color:white" routerLink="/logout" class="nav-link">LogOut</a></li>

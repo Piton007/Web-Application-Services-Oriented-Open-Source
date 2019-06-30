@@ -21,15 +21,7 @@
         required [(ngModel)]="servicio.cost_serv">
           </div>
     </div>
-    <div class="row-fluid">
-      <div class="form-group">
-        <label for="Cita_Id">Cita :</label>
-        <select class="custom-select" id="Cita_Id" name="Cita_Id" [(ngModel)]="citasSelect" >
-            <option *ngFor="let cita of citas" [ngValue]="cita">
-                {{cita.id}}</option>
-        </select>
-        </div>
-  </div>
+
       <div class="row mx-1">
           <div class="form-group" >
           <button  type="submit" class="btn btn-success form-control">Guardar</button>

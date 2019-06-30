@@ -45,7 +45,7 @@ export class LoginComponent implements OnInit {
       }
       else{
       if (this.loginservice.isAdminLoggedIn()) {
-        this.router.navigate(['servicio']);
+        this.router.navigate(['citas']);
       }
       else{
        

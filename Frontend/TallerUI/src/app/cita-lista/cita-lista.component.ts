@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Cita } from '../model/cita';
+import { Router } from '@angular/router';
 import { CitaService } from '../cita.service';
 import { AuthenticationService } from '../service/authentication.service';
 
@@ -11,11 +12,11 @@ import { AuthenticationService } from '../service/authentication.service';
 export class CitaListaComponent implements OnInit {
 
   citaupdate:Cita;
-  placaselect:string;
+  placaselect:string="";
   citas:Cita[];
   dialog:boolean=false;
   dialogact:boolean=false;
-  constructor(private citaService:CitaService, private autenticar:AuthenticationService) { }
+  constructor(private citaService:CitaService,private router: Router, private autenticar:AuthenticationService) { }
 
   ngOnInit() {
     this.loadData();
@@ -48,5 +49,8 @@ export class CitaListaComponent implements OnInit {
   }
   estado(cita:Cita){
     return (cita.estado_cita==0)?"pendiente":"terminado";
+  }
+  goservicio(id:number){
+    this.router.navigate(['/servicio',id]);
   }
 }

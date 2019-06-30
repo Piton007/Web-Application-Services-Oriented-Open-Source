@@ -1,4 +1,4 @@
-﻿<app-crear-cita *ngIf="dialog" ></app-crear-cita>
+﻿<app-crear-cita *ngIf="dialog"   ></app-crear-cita>
 
 <br/>
 <h2 class="row justify-content-center">Citas</h2>
@@ -48,10 +48,15 @@
           <button  type="button" class="btn btn-danger mr-4" (click)= "eliminar(cita.id)" >
             <i class="material-icons small">close</i>
           </button>
+          
           <button *ngIf ="autenticar.isAdminLoggedIn() && cita.estado_cita==0"  type="button" class="btn btn-success mr-4" (click)= "done(cita)" >
               <i class="material-icons small">done</i>
-            </button>
-            
+          </button>
+
+          <button  type="button" class="btn btn-secondary " (click)= "goservicio(cita.id)" >
+            <i class="material-icons small">assignment</i>
+          </button>
+          
         </td>
       </tr>
     </tbody>

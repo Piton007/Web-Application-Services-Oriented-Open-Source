@@ -24,7 +24,7 @@ const routes: Routes = [
     {path:'nuevo', component:CrearClienteComponent},
     {path:'vehiculo/nuevo', component:CrearVehiculoComponent},
     {path:'vehiculo/listar',component:ListarVehiculoComponent},
-    {path:'servicio',component:ServicioListarComponent},
+    {path:'servicio/:id',component:ServicioListarComponent},
     {path:'servicio/nuevo',component:ServicioCrearComponent},
     {path:'repuestos/nuevo',component:RegistrarRepuestoComponent},
     {path:'repuestos',component:ListarRepuestoComponent},
